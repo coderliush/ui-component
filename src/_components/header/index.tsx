@@ -1,6 +1,7 @@
 import React, { useState, ReactElement } from 'react'
 import { Divider, Input, Menu, Button, Layout } from 'antd'
-import styles from './index.module.less'
+import styles from "./index.module.less"
+console.log('---', styles.header)
 const { Header } = Layout
 
 export default function Index(): ReactElement {
@@ -14,9 +15,9 @@ export default function Index(): ReactElement {
         language === Language.zh ? setLanguage(Language.en) : setLanguage(Language.zh)
     }
     return (
-        <Header>
+        <Header className={styles.header}>
             <div className={styles.logo}>
-                <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />
+                <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="logo" />
                 <p>Ui components</p>
             </div>
             <Divider type="vertical" />
