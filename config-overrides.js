@@ -6,7 +6,7 @@
  */ 
 
 const path = require('path')
-const { override, addWebpackAlias, addWebpackResolve } = require('customize-cra')
+const { override, addWebpackAlias, addWebpackResolve, addPostcssPlugins } = require('customize-cra')
 
 module.exports = override(
     addWebpackAlias({
@@ -14,5 +14,10 @@ module.exports = override(
     }),
     addWebpackResolve({
         extensions: [ '.tsx', '.ts', '.js' ]
-    })
+    }),
+    addPostcssPlugins([
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
 )
